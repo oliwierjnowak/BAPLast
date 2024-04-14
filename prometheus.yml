@@ -1,0 +1,23 @@
+# my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: prometheus
+
+    scrape_interval: 2s # poll very quickly for a more responsive demo
+    static_configs:
+      - targets: ["baplastapi:8080"]
+
+
+
+#C:/Users/onowa/IdeaProjects/sj2324-5dhif-pos-microservice-architecture-oliwierjnowak/very-external-services/tmp/prometheus.yml
+
+#  docker run --name my-prometheus --mount type=bind,source=C:/Users/onowa/IdeaProjects/sj2324-5dhif-pos-microservice-architecture-oliwierjnowak/very-external-services/tmp/prometheus.yml,destination=/etc/prometheus/prometheus.yml -p 9090:9090 --add-host host.docker.internal:host-gateway prom/prometheus
+# https://docs.docker.com/config/daemon/prometheus/
+
+
+#grafana
+#docker run -d --name=grafana -p 3000:3000 grafana/grafana

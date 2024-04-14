@@ -1,0 +1,6 @@
+@BAPLast_HostAddress = http://localhost:5115
+
+GET {{BAPLast_HostAddress}}/tweet/
+Accept: application/json
+
+###
