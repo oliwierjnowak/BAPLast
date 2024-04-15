@@ -43,16 +43,7 @@ services:
       - '3000:3000'
     depends_on:
       - prometheusclient
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.15.0
-    container_name: kibana
-    ports:
-      - "5601:5601"
-    environment:
-      ELASTICSEARCH_URL: http://elasticsearch:9200
-      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
-    depends_on:
-      - elasticsearch
+ 
 ## go_memstats_heap_alloc_bytes
 ##add data source to grafana == https://prometheus:9090 and than create data source for stat like go_memstats_heap_alloc_bytes
 ## only problem is to chose the right ports that eureka gave events and attende apis :C
